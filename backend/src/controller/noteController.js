@@ -1,3 +1,5 @@
+import express from "express";
+
 export const getALLNotes = (req, res) => {res.send("fetched data successfully")};
 
 export const createNote = (req, res) => {res.send("data posted successfully")};
