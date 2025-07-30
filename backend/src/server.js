@@ -8,7 +8,14 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(express.json());
+app.use(express.json());//middleware for parsing json file
+
+app.use((req,res, next) => {
+    console.log(`${req.method}`);
+    console.log(`${req.url}`);
+    next();
+
+})//custom middleware for understanding middleware
 
 app.use("/api/notes", noteRoutes);
 connectDB();
