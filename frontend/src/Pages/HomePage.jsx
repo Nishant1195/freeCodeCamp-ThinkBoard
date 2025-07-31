@@ -3,6 +3,7 @@ import toast from 'react-hot-toast'
 import NavBar from "../components/NavBar.jsx"
 import RateLimiterUI from '../components/RateLimiterUI.jsx'
 import axios from "axios"
+import NoteComponent from './NoteComponent.jsx'
 const HomePage = () => {
   const [isRateLimited, setIsRateLimited] = useState(false);
   const [notes, setNotes] = useState([]);
@@ -39,9 +40,9 @@ const HomePage = () => {
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
             {
               notes.map((note)=>{
-                return (<div>
+                return (
                   <NoteComponent key={note._id} note={note}/>
-                </div>)
+                )
               })
             }
 
