@@ -41,7 +41,7 @@ export const updateNote = async (req,res) => {
     try {
         const {title, content} = req.body;
         const updatedNote = await Notes.findByIdAndUpdate(req.params.id, {title, content});
-        if(!updateNote) return await Notes.json({message:"Note not found"});
+        if(!updatedNote) return await Notes.json({message:"Note not found"});
         res.status(200).json({message:"Note updated successfully"});
     } catch (error) {
         console.log(error);
