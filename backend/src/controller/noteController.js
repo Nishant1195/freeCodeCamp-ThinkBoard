@@ -14,7 +14,7 @@ export const getALLNotes = async (req, res) => {
 export const getNoteById = async (req, res) =>{
     try {
         const note = await Notes.findById(req.params.id);
-        res.status(200).json({note});
+        res.status(200).json(note);
     } catch (error) {
         console.log(error);
         res.status(500).json({message:"Internal Server Error"})
